@@ -24,7 +24,7 @@ GRANTS.FUN is an autonomous grant operator platform built on NEAR Protocol, desi
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/grants-fun.git
+git clone https://github.com/louisdevzz/grants-fun.git
 cd grants-fun
 ```
 
@@ -32,13 +32,17 @@ cd grants-fun
 ```bash
 pnpm install
 ```
+3. Create a `.env` file in the root directory with the following variables:
+```bash
+cp .env.example .env.local
+```
 
-3. Run the development server:
+4. Run the development server:
 ```bash
 pnpm dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
+5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
 ## Development
 

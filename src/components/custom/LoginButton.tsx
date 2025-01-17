@@ -41,7 +41,7 @@ const ButtonLogin: NextPage = () => {
         return (
             <button
                 onClick={handleConnect}
-                className="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2.5 px-6 rounded-lg cursor-pointer flex items-center"
+                className="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2.5 px-6 rounded-lg text-sm cursor-pointer flex items-center"
             >
                 Connect Wallet
             </button>
