@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { WalletSelectorContextProvider } from "@/context/WalletSelectorContext"
+import { Toaster } from 'react-hot-toast';
+
+import "@near-wallet-selector/modal-ui/styles.css"
 import "./globals.css";
 
 const geistSans = Geist({
@@ -59,7 +63,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <WalletSelectorContextProvider>
+          <Toaster position="top-center" />
+          {children}
+        </WalletSelectorContextProvider>
       </body>
     </html>
   );

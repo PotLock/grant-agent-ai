@@ -1,6 +1,9 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { Menu } from 'lucide-react'
 import Image from "next/image"
+import LoginButton from "@/components/custom/LoginButton"
 
 const Header = () => {
   return (
@@ -16,7 +19,7 @@ const Header = () => {
           />
           <span className="font-semibold">grants.fun</span>
         </div>
-        <Button variant="default" size="sm" className="hidden sm:flex bg-blue-500 hover:bg-blue-600 font-semibold">+ Connect Wallet</Button>
+        <LoginButton />
         <Button variant="ghost" size="icon" className="sm:hidden">
           <Menu className="h-5 w-5" />
         </Button>
