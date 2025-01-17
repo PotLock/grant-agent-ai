@@ -50,6 +50,13 @@ pnpm dev
 pnpm dlx shadcn@latest add component-name
 ```
 
+## Run tests (coming soon)
+```bash
+pnpm test # run tests all
+# or
+pnpm test:ui # run tests with ui
+```
+
 ## Development
 
 - `pnpm dev` - Start the development server with Turbopack
