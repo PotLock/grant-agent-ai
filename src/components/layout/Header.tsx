@@ -16,7 +16,7 @@ const Header = () => {
           />
           <span className="font-semibold">grants.fun</span>
         </div>
-        <Button variant="default" size="sm" className="hidden sm:flex">+ Connect Wallet</Button>
+        <Button variant="default" size="sm" className="hidden sm:flex bg-blue-500 hover:bg-blue-600 font-semibold">+ Connect Wallet</Button>
         <Button variant="ghost" size="icon" className="sm:hidden">
           <Menu className="h-5 w-5" />
         </Button>
