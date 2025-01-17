@@ -5,6 +5,7 @@ import { Toaster } from 'react-hot-toast';
 
 import "@near-wallet-selector/modal-ui/styles.css"
 import "./globals.css";
+import LayoutCustom from "@/components/custom/LayoutCustom";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -65,7 +66,9 @@ export default function RootLayout({
       >
         <WalletSelectorContextProvider>
           <Toaster position="top-center" />
-          {children}
+          <LayoutCustom> 
+            {children} 
+          </LayoutCustom>
         </WalletSelectorContextProvider>
       </body>
     </html>

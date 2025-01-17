@@ -6,7 +6,6 @@ import FeaturedGrantOperatorAgents from "@/components/sections/FeaturedGrantOper
 export default function Home() {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
       <main className="container py-4 mt-8 sm:py-8 space-y-6 sm:space-y-8 px-4 mx-auto">
         <Hero />
         <FeaturedGrantAgents />

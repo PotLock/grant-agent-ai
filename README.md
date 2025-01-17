@@ -44,6 +44,12 @@ pnpm dev
 
 5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
+## Add components from shadcn/ui
+
+```bash
+pnpm dlx shadcn@latest add component-name
+```
+
 ## Development
 
 - `pnpm dev` - Start the development server with Turbopack
