@@ -8,6 +8,7 @@ import TokenConfiguration from '@/components/sections/TokenConfiguration'
 import PlatformIntegration from '@/components/sections/PlatformIntegration'
 import GrantCanvas from '@/components/sections/GrantCanvas'
 import WalletConfiguration from '@/components/sections/WalletConfiguration'
+import ProgressSteps from '@/components/custom/ProgressSteps'
 import toast from 'react-hot-toast'
 
 interface AgentPreview {
@@ -40,6 +41,8 @@ const CreateAgent = () => {
             Launch your own grant program on social with an agent governed by token holders
           </p>
         </div>
+
+        <ProgressSteps currentStep={step} />
 
         {/* <BasicInformation preview={preview} setPreview={setPreview} emojis={emojis} /> */}
         <div className='container mx-auto grid gap-8 lg:grid-cols-[1fr,400px] pb-10'>
