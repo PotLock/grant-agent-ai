@@ -68,9 +68,9 @@ const AgentDetails = () => {
                         </div>
                     </div>
                 </div>
-                {/* <div className="rounded-lg border">
+                <div className="rounded-lg border">
                     <TradingViewChart />
-                </div> */}
+                </div>
 
                 <Tabs defaultValue="overview" className="space-y-4">
                     <TabsList className="bg-transparent p-1">

@@ -12,7 +12,7 @@ interface Tweet {
 
 const tweets: Tweet[] = Array(12)
   .fill({
-    avatar: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/GRANTS.FUN-Hg2vYXugdJ5S2rCAFfez2hNUFq3yrb.png",
+    avatar: "/assets/images/avatar/avatar.png",
     name: "Grantsfun",
     handle: "@grantsfun",
     date: "Aug 1, 2023",
