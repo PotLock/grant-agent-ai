@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import Image from "next/image"
+import { useRouter } from "next/navigation"
 import { useState } from "react"
 
 // Mock data
@@ -50,6 +51,7 @@ const FeaturedGrantAgents = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 2;
   const totalPages = Math.ceil(mockGrantAgents.length / itemsPerPage);
+  const router = useRouter();
 
   const handleNextPage = () => {
     setCurrentPage((prev) => Math.min(prev + 1, totalPages));
@@ -94,7 +96,7 @@ const FeaturedGrantAgents = () => {
 
       <div className="grid sm:grid-cols-2 gap-4">
         {getCurrentPageItems().map((agent) => (
-          <Card key={agent.id} className="p-4 sm:p-6">
+          <Card key={agent.id} className="p-4 sm:p-6 cursor-pointer" onClick={() => router.push(`/agents/${agent.id}`)}>
             <div className="flex flex-col sm:flex-row gap-4">
               <div className="h-20 w-20 sm:h-24 sm:w-24 bg-muted rounded-lg shrink-0 mx-auto sm:mx-0 flex items-center justify-center">
                 <Image src={agent.image} alt={agent.name} width={80} height={80} className="object-contain" />

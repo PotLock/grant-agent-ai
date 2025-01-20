@@ -16,8 +16,11 @@ interface TokenConfigurationProps {
 }
 
 export default function TokenConfiguration({ onBack, onNext }: TokenConfigurationProps) {
-  const [launchOption, setLaunchOption] = useState('existing')
-  const [maxDeploy, setMaxDeploy] = useState(50)
+  const [launchOption, setLaunchOption] = useState<string>('existing')
+  const [maxDeploy, setMaxDeploy] = useState<number>(50)
+  const [tokenAddress, setTokenAddress] = useState<string|null>(null)
+  const [minGrant, setMinGrant] = useState<string|null>(null)
+  const [maxGrant, setMaxGrant] = useState<string|null>(null)
   
   return (
     <div className="space-y-8">
@@ -78,6 +81,8 @@ export default function TokenConfiguration({ onBack, onNext }: TokenConfiguratio
                 <Input 
                     id="token-address" 
                     placeholder="Enter token address"
+                    value={tokenAddress || ''}
+                    onChange={(e) => setTokenAddress(e.target.value)}
                 />
                 <div className="text-sm text-gray-500">
                     E.g amichael.near
@@ -159,6 +164,8 @@ export default function TokenConfiguration({ onBack, onNext }: TokenConfiguratio
                     id="min-grant" 
                     type="number"
                     placeholder="10,000"
+                    value={minGrant || ''}
+                    onChange={(e) => setMinGrant(e.target.value)}
                 />
                 </div>
                 <div className="space-y-1.5">
@@ -167,6 +174,8 @@ export default function TokenConfiguration({ onBack, onNext }: TokenConfiguratio
                     id="max-grant" 
                     type="number"
                     placeholder="30,000"
+                    value={maxGrant || ''}
+                    onChange={(e) => setMaxGrant(e.target.value)}
                 />
                 </div>
             </div>

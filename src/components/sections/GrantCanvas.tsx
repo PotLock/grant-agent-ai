@@ -22,6 +22,9 @@ interface GrantCanvasProps {
 const GrantCanvas = ({ onBack, onNext }: GrantCanvasProps) => {
     const [selectedMetrics, setSelectedMetrics] = useState<string[]>([])
     const [selectedCriteria, setSelectedCriteria] = useState<string[]>([])
+    const [ecosystemGoals, setEcosystemGoals] = useState<string|null>(null);
+    const [evaluationCriteria, setEvaluationCriteria] = useState<string|null>(null);
+    const [rewardCriteria, setRewardCriteria] = useState<string|null>(null);
   
     const metricsOptions: Tag[] = [
       { id: 'community-impact', label: 'Community Impact' },
@@ -70,6 +73,8 @@ const GrantCanvas = ({ onBack, onNext }: GrantCanvasProps) => {
               <Input 
                 id="ecosystem-goals" 
                 placeholder="E.g Increase treasury etc"
+                value={ecosystemGoals || ''}
+                onChange={(e) => setEcosystemGoals(e.target.value)}
               />
             </div>
 
@@ -79,6 +84,8 @@ const GrantCanvas = ({ onBack, onNext }: GrantCanvasProps) => {
                 id="evaluation-criteria"
                 placeholder="Describe how projects will be evaluated (e.g Social Impact, Technical Complexity)"
                 className="min-h-[100px]"
+                value={evaluationCriteria || ''}
+                onChange={(e) => setEvaluationCriteria(e.target.value)}
               />
             </div>
 
@@ -88,6 +95,8 @@ const GrantCanvas = ({ onBack, onNext }: GrantCanvasProps) => {
                 id="reward-criteria"
                 placeholder="Describe the criteria for rewarding projects"
                 className="min-h-[100px]"
+                value={rewardCriteria || ''}
+                onChange={(e) => setRewardCriteria(e.target.value)}
               />
             </div>
 
