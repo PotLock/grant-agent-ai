@@ -1,5 +1,4 @@
 import TradingViewChart from "@/components/custom/TradingViewChart"
-import MarketStats from "@/components/custom/MarketStats"
 import SwapInterface from "@/components/custom/SwapInterface"
 import SocialIntegrations from "@/components/custom/SocialIntegrations"
 import Reviewers from "@/components/custom/Reviewers"
@@ -15,7 +14,8 @@ import {
 } from "@/components/ui/breadcrumb"
 import Image from "next/image"
 import { Copy, Search, BarChart2, Vote, Users, MessageSquare, FileText } from "lucide-react"
-import Link from "next/link"
+import AboutGovernance from "@/components/custom/AboutGovernance"
+import ProposalGovernance from "@/components/custom/ProposalGovernance"
 
 
 const AgentDetails = () => {
@@ -68,9 +68,9 @@ const AgentDetails = () => {
                         </div>
                     </div>
                 </div>
-                <div className="rounded-lg border">
+                {/* <div className="rounded-lg border">
                     <TradingViewChart />
-                </div>
+                </div> */}
 
                 <Tabs defaultValue="overview" className="space-y-4">
                     <TabsList className="bg-transparent p-1">
@@ -102,7 +102,7 @@ const AgentDetails = () => {
                     <div className="bg-gray-100 w-full h-[2px]"/>
 
                     <TabsContent value="overview" className="space-y-6">
-                    <div className="grid gap-4 md:grid-cols-5">
+                      <div className="grid gap-4 md:grid-cols-5">
                         <div className="rounded-lg border p-2 px-4 max-w-full max-h-[70px]">
                           <div className="text-sm font-medium text-muted-foreground">Market Cap</div>
                           <div className="mt-1 text-sm font-bold">$75,000,000</div>
@@ -123,42 +123,47 @@ const AgentDetails = () => {
                           <div className="text-sm font-medium text-muted-foreground">Total Grants</div>
                           <div className="mt-1 text-sm font-bold">$75,000,000</div>
                         </div>
-                    </div>
+                      </div>
 
-                    <div className="space-y-4">
-                        <div className="flex flex-col gap-1">
-                          <h2 className="text-lg font-bold">Description</h2>
-                          <div className="w-full h-[1px] bg-gray-200"/>
-                        </div>
-                        <p className="text-muted-foreground text-sm">
-                        Lorem ipsum dolor sit amet consectetur adipiscing elit. Purus elementum erat quae nec aliquat sed
-                        feugiat dolor donec. Mi non maecenas non adipiscing. Fam enim et risus nulla amet mus in aliquam
-                        porta.
-                        </p>
-                    </div>
+                      <div className="space-y-4">
+                          <div className="flex flex-col gap-1">
+                            <h2 className="text-lg font-bold">Description</h2>
+                            <div className="w-full h-[1px] bg-gray-200"/>
+                          </div>
+                          <p className="text-muted-foreground text-sm">
+                          Lorem ipsum dolor sit amet consectetur adipiscing elit. Purus elementum erat quae nec aliquat sed
+                          feugiat dolor donec. Mi non maecenas non adipiscing. Fam enim et risus nulla amet mus in aliquam
+                          porta.
+                          </p>
+                      </div>
 
-                    <div className="space-y-4">
-                        <div className="flex flex-col gap-1">
-                          <h2 className="text-lg font-bold">Evaluation Criterion</h2>
-                          <div className="w-full h-[1px] bg-gray-200"/>
-                        </div>
-                        <p className="text-muted-foreground text-sm">
-                        Lorem ipsum dolor sit amet consectetur adipiscing elit. Purus elementum erat quae nec aliquat sed
-                        feugiat dolor donec. Mi non maecenas non adipiscing. Fam enim et risus nulla amet mus in aliquam
-                        porta.
-                        </p>
-                    </div>
+                      <div className="space-y-4">
+                          <div className="flex flex-col gap-1">
+                            <h2 className="text-lg font-bold">Evaluation Criterion</h2>
+                            <div className="w-full h-[1px] bg-gray-200"/>
+                          </div>
+                          <p className="text-muted-foreground text-sm">
+                          Lorem ipsum dolor sit amet consectetur adipiscing elit. Purus elementum erat quae nec aliquat sed
+                          feugiat dolor donec. Mi non maecenas non adipiscing. Fam enim et risus nulla amet mus in aliquam
+                          porta.
+                          </p>
+                      </div>
 
                     <Reviewers />
                     <SocialIntegrations />
                     </TabsContent>
+
+                    <TabsContent value="governance" className="space-y-6">
+                      <AboutGovernance /> 
+                      <ProposalGovernance />  
+                    </TabsContent>
                 </Tabs>
             </div>
 
-            <div className="space-y-6">
+            {/* <div className="space-y-6">
                 <SwapInterface />
                 <TwitterActivity />
-            </div>
+            </div> */}
           </div>
         </div>
       </main>
