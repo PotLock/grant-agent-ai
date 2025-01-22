@@ -49,13 +49,16 @@ const ProposalGovernance = () => {
 
                     <Select>
                         <SelectTrigger className="w-[180px]">
-                        <SelectValue placeholder="State" />
+                            <SelectValue placeholder="State" />
                         </SelectTrigger>
                         <SelectContent>
-                        <SelectItem value="all">All States</SelectItem>
-                        <SelectItem value="active">Active</SelectItem>
-                        <SelectItem value="passed">Passed</SelectItem>
-                        <SelectItem value="failed">Failed</SelectItem>
+                            <SelectItem value="all">All States</SelectItem>
+                            <SelectItem value="approved">Approved</SelectItem>
+                            <SelectItem value="rejected">Rejected</SelectItem>
+                            <SelectItem value="in-progress">In Progress</SelectItem>
+                            <SelectItem value="expired">Expired</SelectItem>
+                            <SelectItem value="failed">Failed</SelectItem>
+                            <SelectItem value="executed">Executed</SelectItem>
                         </SelectContent>
                     </Select>
                 </div>
@@ -71,7 +74,7 @@ const ProposalGovernance = () => {
             <div className="space-y-4 mt-4 flex flex-col">
                 {
                     [1,2,3,4,5,6,7,8,9,10].map((item, index) => (
-                        <Card className="hover:bg-accent/50 transition-colors cursor-pointer">
+                        <Card key={index} className="hover:bg-accent/50 transition-colors cursor-pointer">
                             <CardContent className="p-4">
                                 <div className="flex items-center justify-between">
                                     <h4 className="font-medium text-base">Reduce Proposal Voting Period</h4>

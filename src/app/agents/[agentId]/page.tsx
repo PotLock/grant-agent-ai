@@ -16,6 +16,8 @@ import Image from "next/image"
 import { Copy, Search, BarChart2, Vote, Users, MessageSquare, FileText } from "lucide-react"
 import AboutGovernance from "@/components/custom/AboutGovernance"
 import ProposalGovernance from "@/components/custom/ProposalGovernance"
+import Grantees from "@/components/custom/Grantees"
+import AgentLogs from "@/components/custom/AgentLogs"
 
 
 const AgentDetails = () => {
@@ -149,13 +151,22 @@ const AgentDetails = () => {
                           </p>
                       </div>
 
-                    <Reviewers />
-                    <SocialIntegrations />
+                      <Reviewers />
+                      <SocialIntegrations />
                     </TabsContent>
 
                     <TabsContent value="governance" className="space-y-6">
                       <AboutGovernance /> 
                       <ProposalGovernance />  
+                    </TabsContent>
+                    <TabsContent value="grantees" className="space-y-6"> 
+                      <Grantees />
+                    </TabsContent>
+                    <TabsContent value="forum" className="space-y-6">
+
+                    </TabsContent>
+                    <TabsContent value="agent-logs" className="space-y-6">
+                      <AgentLogs />
                     </TabsContent>
                 </Tabs>
             </div>
