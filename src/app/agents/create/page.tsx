@@ -2,29 +2,26 @@
 
 import { useState } from 'react'
 import BasicInformation from '@/components/sections/BasicInformation'
-import { Card } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
+import AgentPreview from '@/components/custom/AgentPriview'
 import TokenConfiguration from '@/components/sections/TokenConfiguration'
 import PlatformIntegration from '@/components/sections/PlatformIntegration'
 import GrantCanvas from '@/components/sections/GrantCanvas'
 import WalletConfiguration from '@/components/sections/WalletConfiguration'
 import ProgressSteps from '@/components/custom/ProgressSteps'
 import toast from 'react-hot-toast'
-
-interface AgentPreview {
-  name: string
-  description: string
-  image: string
-}
+import { AgentPreviewTypes } from '@/types/agent'
 
 const emojis = ["😀", "😄", "🤪", "❤️", "🐻", "🐉", "🐶", "😋", "🐺", "🏃", "🍷"]
 
 const CreateAgent = () => {
     const [step, setStep] = useState<number>(1)
-    const [preview, setPreview] = useState<AgentPreview>({
+    const [preview, setPreview] = useState<AgentPreviewTypes>({
         name: '',
         description: '',
-        image: '🤖'
+        image: '/assets/images/agent-example.svg',
+        governanceType: '',
+        fundingFrequency: '',
+        evaluationType: ''
     })
     const [payoutBuffer, setPayoutBuffer] = useState<string|null>(null)
 
@@ -53,39 +50,9 @@ const CreateAgent = () => {
             {step === 5 && <WalletConfiguration onBack={() => setStep(4)} onDeploy={handleDeploy} payoutBuffer={payoutBuffer} setPayoutBuffer={setPayoutBuffer} />}
 
             {/* Preview */}
-            <div className="lg:sticky lg:top-8 space-y-4">
-                <Card className="rounded-xl border p-6">
-                <div className="flex justify-between items-start mb-6">
-                    <div className="flex items-start gap-3">
-                    <div className="text-3xl leading-none mt-1">{preview.image}</div>
-                    <div>
-                        <h3 className="font-semibold text-lg">{preview.name || 'AI Research DAO'}</h3>
-                        <div className="text-sm text-gray-600">$Token</div>
-                    </div>
-                    </div>
-                    <Button variant="outline" size="sm">Preview</Button>
-                </div>
-
-                <p className="text-sm text-gray-600 mb-6">
-                    {preview.description || 'Lorem ipsum dolor sit amet consectetur. Magnis tincidunt platea adipiscing diam in. Ut urna sed quis at eu nibh sapien neque quis.'}
-                </p>
-
-                <div className="space-y-4">
-                    <div className="flex justify-between py-1">
-                    <span className="text-sm text-gray-600">Governance Type</span>
-                    <span className="text-sm font-medium">Admin-based</span>
-                    </div>
-                    <div className="flex justify-between py-1">
-                    <span className="text-sm text-gray-600">Funding Frequency</span>
-                    <span className="text-sm font-medium">Weekly</span>
-                    </div>
-                    <div className="flex justify-between py-1">
-                    <span className="text-sm text-gray-600">Evaluation Type</span>
-                    <span className="text-sm font-medium">AI + Human Review</span>
-                    </div>
-                </div>
-                </Card>
-            </div>
+            <AgentPreview 
+              {...preview}
+            />  
         </div>
       </main>
     </div>

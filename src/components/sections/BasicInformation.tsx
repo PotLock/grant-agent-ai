@@ -6,22 +6,16 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-
-interface AgentPreview {
-    name: string
-    description: string
-    image: string
-}
+import { AgentPreviewTypes } from "@/types/agent"
 
 interface BasicInformationProps {
-    preview: AgentPreview
-    setPreview: React.Dispatch<React.SetStateAction<AgentPreview>>
+    preview: AgentPreviewTypes
+    setPreview: React.Dispatch<React.SetStateAction<AgentPreviewTypes>>
     emojis: string[]
     onNext: () => void
 }
 
-const BasicInformation = ({ preview, setPreview, emojis, onNext }: BasicInformationProps) => {
-
+const BasicInformation: React.FC<BasicInformationProps> = ({ preview, setPreview, emojis, onNext }) => {
 
   return (
       <div className="space-y-8">
@@ -44,7 +38,7 @@ const BasicInformation = ({ preview, setPreview, emojis, onNext }: BasicInformat
                   id="name" 
                   placeholder="Agent name"
                   value={preview.name}
-                  onChange={(e) => setPreview((p: AgentPreview) => ({...p, name: e.target.value}))}
+                  onChange={(e) => setPreview((p: AgentPreviewTypes) => ({...p, name: e.target.value}))}
                 />
               </div>
 
@@ -54,7 +48,7 @@ const BasicInformation = ({ preview, setPreview, emojis, onNext }: BasicInformat
                   id="description" 
                   placeholder="Describe your agent"
                   value={preview.description}
-                  onChange={(e) => setPreview((p: AgentPreview) => ({...p, description: e.target.value}))}
+                  onChange={(e) => setPreview((p: AgentPreviewTypes) => ({...p, description: e.target.value}))}
                   className="resize-none"
                   rows={4}
                 />
@@ -79,7 +73,7 @@ const BasicInformation = ({ preview, setPreview, emojis, onNext }: BasicInformat
                       {emojis.map((emoji) => (
                         <button
                           key={emoji}
-                          onClick={() => setPreview((p: AgentPreview) => ({...p, image: emoji}))}
+                          onClick={() => setPreview((p: AgentPreviewTypes) => ({...p, image: emoji}))}
                           className="text-3xl hover:scale-110 transition-transform"
                         >
                           {emoji}

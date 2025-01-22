@@ -19,7 +19,7 @@ interface GrantCanvasProps {
     label: string;
   }
 
-const GrantCanvas = ({ onBack, onNext }: GrantCanvasProps) => {
+const GrantCanvas: React.FC<GrantCanvasProps> = ({ onBack, onNext }) => {
     const [selectedMetrics, setSelectedMetrics] = useState<string[]>([])
     const [selectedCriteria, setSelectedCriteria] = useState<string[]>([])
     const [ecosystemGoals, setEcosystemGoals] = useState<string|null>(null);
@@ -54,9 +54,6 @@ const GrantCanvas = ({ onBack, onNext }: GrantCanvasProps) => {
         <div className="space-y-8">
         <Card className="rounded-xl border p-6">
           <div className="flex items-center gap-3">
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-600 text-sm text-white">
-              4
-            </div>
             <div className="flex items-center gap-2">
               <h2 className="text-xl font-semibold">Grant Canvas</h2>
               <Info className="h-4 w-4 text-gray-400" />
@@ -70,9 +67,10 @@ const GrantCanvas = ({ onBack, onNext }: GrantCanvasProps) => {
           <div className="mt-6 space-y-6">
             <div className="space-y-1.5">
               <Label htmlFor="ecosystem-goals">Ecosystem Goals</Label>
-              <Input 
+              <Textarea 
                 id="ecosystem-goals" 
                 placeholder="E.g Increase treasury etc"
+                className="min-h-[100px]"
                 value={ecosystemGoals || ''}
                 onChange={(e) => setEcosystemGoals(e.target.value)}
               />
@@ -152,14 +150,14 @@ const GrantCanvas = ({ onBack, onNext }: GrantCanvasProps) => {
               </div>
             </div>
           </div>
-        </Card>
 
-        <div className="flex justify-between">
-          <Button variant="outline" onClick={onBack}>Back: Platform Integration</Button>
-          <Button className="bg-blue-600 hover:bg-blue-700" onClick={onNext}>
-            Next: Wallet Configuration
-          </Button>
-        </div>
+          <div className="flex justify-between pt-10">
+            <Button variant="outline" onClick={onBack}>Back: Platform Integration</Button>
+            <Button className="bg-blue-600 hover:bg-blue-700" onClick={onNext}>
+              Next: Wallet Configuration
+            </Button>
+          </div>
+        </Card>
       </div>
     )
 }
