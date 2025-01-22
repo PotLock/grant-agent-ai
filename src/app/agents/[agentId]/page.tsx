@@ -71,7 +71,7 @@ const AgentDetails = () => {
                     </div>
                 </div>
                 <div className="rounded-lg border">
-                    <TradingViewChart />
+                  <TradingViewChart />
                 </div>
 
                 <Tabs defaultValue="overview" className="space-y-4">
