@@ -1,7 +1,5 @@
 import TradingViewChart from "@/components/custom/TradingViewChart"
 import SwapInterface from "@/components/custom/SwapInterface"
-import SocialIntegrations from "@/components/custom/SocialIntegrations"
-import Reviewers from "@/components/custom/Reviewers"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import TwitterActivity from "@/components/custom/TwitterActivity"
 import {
@@ -72,9 +70,9 @@ const AgentDetails = () => {
                         </div>
                     </div>
                 </div>
-                {/* <div className="rounded-lg border">
+                <div className="rounded-lg border">
                     <TradingViewChart />
-                </div> */}
+                </div>
 
                 <Tabs defaultValue="overview" className="space-y-4">
                     <TabsList className="bg-transparent p-1">
@@ -130,10 +128,10 @@ const AgentDetails = () => {
                 </Tabs>
             </div>
 
-            {/* <div className="space-y-6">
+            <div className="space-y-6">
                 <SwapInterface />
                 <TwitterActivity />
-            </div> */}
+            </div>
           </div>
         </div>
       </main>

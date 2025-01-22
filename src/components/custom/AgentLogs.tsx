@@ -40,7 +40,7 @@ const IconSocial = {
 
 const LogInteraction = ({ log }: { log: LogEntry }) => {
     return (
-        <Card key={log.id}>
+        <Card key={log.id} className="shadow-none">
             <CardContent className="flex items-start gap-4 p-6 border-b last:border-b-0">
                 <div className="w-8 h-8 bg-black rounded-lg p-2">
                     {IconSocial[log.platform as keyof typeof IconSocial]}
@@ -74,30 +74,32 @@ const LogInteraction = ({ log }: { log: LogEntry }) => {
 
 const LogDeveloper = ({ log }: { log: LogEntry }) => {
     return (
-        <CardContent className="flex items-center justify-between p-4">
-            <div className="flex flex-col gap-2">
-                <div className="flex items-center gap-2">
-                    <span className="text-sm font-medium">New Model: Commit:</span>
-                    <span className="text-sm text-muted-foreground">{log.commit}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                    <span className="text-sm text-muted-foreground">Contributed by</span>
-                    <div className="flex items-center gap-1">
-                        <Image 
-                            src={log.contributor?.avatar || ''} 
-                            alt={log.contributor?.name || ''} 
-                            width={20} 
-                            height={20} 
-                            className="rounded-full"
-                        />
-                        <span className="text-sm text-muted-foreground">@{log.contributor?.name}</span>
+        <Card key={log.id} className="shadow-none">
+            <CardContent className="flex items-center justify-between p-4">
+                <div className="flex flex-col gap-2">
+                    <div className="flex items-center gap-2">
+                        <span className="text-sm font-medium">New Model: Commit:</span>
+                        <span className="text-sm text-muted-foreground">{log.commit}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                        <span className="text-sm text-muted-foreground">Contributed by</span>
+                        <div className="flex items-center gap-1">
+                            <Image 
+                                src={log.contributor?.avatar || ''} 
+                                alt={log.contributor?.name || ''} 
+                                width={20} 
+                                height={20} 
+                                className="rounded-full"
+                            />
+                            <span className="text-sm text-muted-foreground">@{log.contributor?.name}</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <span className="text-xs text-muted-foreground ml-4">
-                {timeAgo(new Date(log.timestamp))}
-            </span>
-        </CardContent>
+                <span className="text-xs text-muted-foreground ml-4">
+                    {timeAgo(new Date(log.timestamp))}
+                </span>
+            </CardContent>
+        </Card>
     )
 }
 
