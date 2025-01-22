@@ -129,7 +129,7 @@ const MindShareChart = () => {
         type: 'column',
         yAxis: 1,
         data: mindshareData,
-        color: 'rgba(187, 247, 208, 0.8)',
+        color: 'rgba(33, 150, 243, 0.5)',
         borderWidth: 0,
       }, {
         name: 'Price',
