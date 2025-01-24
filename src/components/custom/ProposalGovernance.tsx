@@ -23,6 +23,11 @@ interface Proposal {
     title: string;
     status: string;
     description: string;
+    treasurySettings: {
+        name: string;
+        currentValue: string;
+        proposedValue: string;
+    }[];
     publisher: {
         address: string;
     };
@@ -49,6 +54,13 @@ const ProposalGovernance = () => {
         title: "Reduce Proposal Voting Period",
         status: "In progress",
         description: "Lorem ipsum dolor sit amet consectetur...",
+        treasurySettings: [
+            {
+              name: "Weekly Reward Balance",
+              currentValue: "10,000 $GRANT",
+              proposedValue: "15,000 $GRANT"
+            }
+        ],
         publisher: {
             address: "0x7df...8yhd9"
         },

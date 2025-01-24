@@ -70,9 +70,9 @@ const AgentDetails = () => {
                         </div>
                     </div>
                 </div>
-                <div className="rounded-lg border">
+                {/* <div className="rounded-lg border">
                   <TradingViewChart />
-                </div>
+                </div> */}
 
                 <Tabs defaultValue="overview" className="space-y-4">
                     <TabsList className="bg-transparent p-1">
@@ -128,10 +128,10 @@ const AgentDetails = () => {
                 </Tabs>
             </div>
 
-            <div className="space-y-6">
+            {/* <div className="space-y-6">
                 <SwapInterface />
                 <TwitterActivity />
-            </div>
+            </div> */}
           </div>
         </div>
       </main>
