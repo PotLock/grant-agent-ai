@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist } from "next/font/google";
 import { WalletSelectorContextProvider } from "@/context/WalletSelectorContext"
 import { Toaster } from 'react-hot-toast';
+import { Analytics } from "@vercel/analytics/react"
 
 import "@near-wallet-selector/modal-ui/styles.css"
 import "./globals.css";
@@ -12,10 +13,6 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "grants.fun",
@@ -70,6 +67,7 @@ export default function RootLayout({
             {children} 
           </LayoutCustom>
         </WalletSelectorContextProvider>
+        <Analytics />
       </body>
     </html>
   );
