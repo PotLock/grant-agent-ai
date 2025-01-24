@@ -13,9 +13,11 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Switch } from "@/components/ui/switch"
 import { Label } from "@/components/ui/label"
 import { useState } from "react"
-import { Calendar, User } from "lucide-react"
+import { Calendar, Plus, User } from "lucide-react"
 import Image from "next/image"
 import ProposalDetail from "./ProposalDetail"
+import { Button } from "../ui/button"
+import CreateProposalModal from "./CreateProposalModal"
 
 // Add an interface for the proposal type
 interface Proposal {
@@ -47,6 +49,7 @@ interface Proposal {
 const ProposalGovernance = () => {
     const [sortByDate, setSortByDate] = useState<boolean>(false)
     const [selectedProposal, setSelectedProposal] = useState<Proposal | null>(null)
+    const [isCreateModalOpen, setIsCreateModalOpen] = useState(false)
 
     // Mock data for demonstration
     const mockProposal: Proposal = {
@@ -135,6 +138,13 @@ const ProposalGovernance = () => {
                             <SelectItem value="executed">Executed</SelectItem>
                         </SelectContent>
                     </Select>
+                    <Button 
+                        className="flex items-center gap-2 bg-blue-500 text-white hover:bg-blue-600"
+                        onClick={() => setIsCreateModalOpen(true)}
+                    >
+                        <Plus className="w-4 h-4" />
+                        Create Proposal
+                    </Button>
                 </div>
             </div>
             <div className="flex items-center space-x-2">
@@ -181,6 +191,10 @@ const ProposalGovernance = () => {
                     ))
                 }
             </div>
+            <CreateProposalModal 
+                isOpen={isCreateModalOpen}
+                onClose={() => setIsCreateModalOpen(false)}
+            />
         </div>
     )
 }
