@@ -55,14 +55,21 @@ const ProposalGovernance = () => {
         voters: [
             {
                 id: "1",
-                name: "John Doe",
+                name: "Johndoe.near",
                 vote: "Yes",
                 votePercentage: 25,
-                voteAmount: "250,000 USDC"
+                voteAmount: "250,000 $BLACKDRAGON"
+            },
+            {
+                id: "2",
+                name: "Johndoe.near",
+                vote: "No",
+                votePercentage: 25,
+                voteAmount: "250,000 $BLACKDRAGON"
             }
         ],
         votingPower: {
-            amount: "100,000 USDC",
+            amount: "100,000 $BLACKDRAGON",
             percentage: "10%"
         }
     }
