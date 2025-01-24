@@ -96,7 +96,7 @@ const FeaturedGrantAgents = () => {
 
       <div className="grid sm:grid-cols-2 gap-4">
         {getCurrentPageItems().map((agent) => (
-          <Card key={agent.id} className="p-4 sm:p-6 cursor-pointer hover:border-blue-500 border-2 border-transparent" onClick={() => router.push(`/agents/${agent.id}`)}>
+          <Card key={agent.id} className="p-4 sm:p-6 cursor-pointer hover:border-blue-500 shadow-none" onClick={() => router.push(`/agents/${agent.id}`)}>
             <div className="flex flex-col sm:flex-row gap-4">
               <div className="h-20 w-20 sm:h-24 sm:w-24 bg-muted rounded-lg shrink-0 mx-auto sm:mx-0 flex items-center justify-center">
                 <Image src={agent.image} alt={agent.name} width={80} height={80} className="object-contain" />

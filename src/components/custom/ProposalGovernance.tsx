@@ -15,9 +15,64 @@ import { Label } from "@/components/ui/label"
 import { useState } from "react"
 import { Calendar, User } from "lucide-react"
 import Image from "next/image"
+import ProposalDetail from "./ProposalDetail"
+
+// Add an interface for the proposal type
+interface Proposal {
+    id: number;
+    title: string;
+    status: string;
+    description: string;
+    publisher: {
+        address: string;
+    };
+    voters: {
+        id: string;
+        name: string;
+        vote: 'Yes' | 'No';
+        votePercentage: number;
+        voteAmount: string;
+    }[];
+    votingPower: {
+        amount: string;
+        percentage: string;
+    };
+}
 
 const ProposalGovernance = () => {
     const [sortByDate, setSortByDate] = useState<boolean>(false)
+    const [selectedProposal, setSelectedProposal] = useState<Proposal | null>(null)
+
+    // Mock data for demonstration
+    const mockProposal: Proposal = {
+        id: 1,
+        title: "Reduce Proposal Voting Period",
+        status: "In progress",
+        description: "Lorem ipsum dolor sit amet consectetur...",
+        publisher: {
+            address: "0x7df...8yhd9"
+        },
+        voters: [
+            {
+                id: "1",
+                name: "John Doe",
+                vote: "Yes",
+                votePercentage: 25,
+                voteAmount: "250,000 USDC"
+            }
+        ],
+        votingPower: {
+            amount: "100,000 USDC",
+            percentage: "10%"
+        }
+    }
+
+    if (selectedProposal) {
+        return <ProposalDetail 
+            proposal={selectedProposal} 
+            onBack={() => setSelectedProposal(null)}
+        />
+    }
 
     return (
         <div className="space-y-6">
@@ -74,7 +129,11 @@ const ProposalGovernance = () => {
             <div className="space-y-4 mt-4 flex flex-col">
                 {
                     [1,2,3,4,5,6,7,8,9,10].map((item, index) => (
-                        <Card key={index} className="hover:bg-accent/50 transition-colors cursor-pointer">
+                        <Card 
+                            key={index} 
+                            className="hover:bg-accent/50 transition-colors cursor-pointer"
+                            onClick={() => setSelectedProposal(mockProposal)}
+                        >
                             <CardContent className="p-4">
                                 <div className="flex items-center justify-between">
                                     <h4 className="font-medium text-base">Reduce Proposal Voting Period</h4>
