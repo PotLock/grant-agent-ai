@@ -22,11 +22,11 @@ const Header = () => {
             <span className="font-semibold">grants.fun</span>
           </Link>
           <div className="flex items-center gap-10">
-            <Link href="/explore">
+            <Link href="/">
               <span className="text-sm">Explore</span>
             </Link>
-            <Link href="/governance">
-              <span className="text-sm">Governance</span>
+            <Link href="/agents/create">
+              <span className="text-sm">Create Agent</span>
             </Link>
             <Link href="/claim">
               <span className="text-sm">Claim Funds</span>
